@@ -110,7 +110,7 @@ if search_btn and search_email:
     st.session_state.searched_email = search_email
     
     # Search for user with this email
-    users_ref = db.reference('users')
+    users_ref = db.reference('users', app=app)
     users = users_ref.get() or {}
     
     found_user_id = None
